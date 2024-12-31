@@ -150,19 +150,19 @@
         </div>
 
         <div class="icon" style="top: 150px; left: 50px;" onclick="openWindow('video2')">
-            <img src="media/Sequence 01.00_00_01_24.Still002.jpg" alt="Video Icon">
+            <img src="media/kurakite2.png" alt="Video Icon">
             <span>Gomi Kite at kura</span>
         </div>
 
         
 
         <div class="icon" style="top: 250px; left: 50px;" onclick="openWindow('video7')">
-            <img src="media/hiroimg.jpg" alt="Video Icon">
+            <img src="media/kurakite2.png" alt="Video Icon">
             <span>Hiro San</span>
         </div>
 
         <div class="icon" style="top: 350px; left: 50px;" onclick="openWindow('video3')">
-            <img src="media/Sequence 01.00_03_01_00.Still002.jpg" alt="Video Icon">
+            <img src="media/kurakite1.png" alt="Video Icon">
             <span>Gomi Kite 5</span>
         </div>
         <div class="icon" style="top: 450px; left: 50px;" onclick="openWindow('video5')">
@@ -275,21 +275,7 @@
             <span>About</span>
         </div>
 
-        <!-- Icons --> <!--to add new vid change icon topdistance and name vere, then the stuff in the windows section -->
-        <div class="icon" style="top: 50px; left: 50px;" onclick="openWindow('video1')">
-            <img src="media/brownflag.png" alt="Video Icon">
-            <span>Brown Flag</span>
-        </div>
-
-        <div class="icon" style="top: 150px; left: 50px;" onclick="openWindow('video2')">
-            <img src="media/Sequence 01.00_00_01_24.Still002.jpg" alt="Video Icon">
-            <span>Gomi Kite 3</span>
-        </div>
-
-        <div class="icon" style="top: 250px; left: 50px;" onclick="openWindow('video3')">
-            <img src="media/Sequence 01.00_03_01_00.Still002.jpg" alt="Video Icon">
-            <span>Gomi Kite 5</span>
-        </div>
+     
 
 
 
@@ -433,19 +419,18 @@
     <!-- Taskbar -->
     <div class="taskbar">
         <div class="start-button">
-            <img src="https://via.placeholder.com/20" alt="Start Icon">
-            Start
+            <img src="media/2604.gif" alt="Start Icon">
+            Gomi
         </div>
         <div class="tray">
-            <img src="https://via.placeholder.com/20" alt="Volume Icon">
-            <img src="https://via.placeholder.com/20" alt="Clock Icon">
+           A Studio Kura residency exhibition by Harrison Rae
         </div>
     </div>
 
         <!-- Audio player (hidden) -->
-        <audio id="background-music" src="media/edelveiss.mp3" preload="auto"></audio>
+        <audio id="backgroundMusic" src="media/edelveiss.mp3" preload="auto"></audio>
 
-        
+
     <script>
         function openWindow(id) {
             document.getElementById(id).style.display = 'flex';
@@ -455,8 +440,19 @@
             document.getElementById(id).style.display = 'none';
         }
 
-        const backgroundMusic = document.getElementById('background-music'); // Audio element
-        backgroundMusic.play(); // Start playing the background music
+        let musicStarted = false;
+
+function playMusic() {
+    if (!musicStarted) {
+        const music = document.getElementById('backgroundMusic');
+        music.play();
+        musicStarted = true;
+    }
+}
+
+// Add a listener for the first click anywhere on the page
+document.addEventListener('click', playMusic);
+
     </script>
 </body>
 </html>

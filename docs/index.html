@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content  ="width=device-width, initial-scale=1.0">
+    <title>Windows 98 Desktop</title>
+    <style>
+        /* Basic Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Tahoma', sans-serif;
+            background-color: #008080;
+            color: black;
+            overflow: hidden;
+        }
+
+        /* Desktop Style */
+        .desktop {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: url(media/windows-98-yaa4sbkls0sleaqm.jpg) no-repeat center center;
+            background-size: cover;
+        }
+
+        /* Icon Style */
+        .icon {
+            position: absolute;
+            width: 80px;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+        }
+
+        .icon img {
+            width: 48px;
+            height: 48px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .icon span {
+            font-size: 12px;
+        }
+
+        /* Window Style */
+        .window {
+            position: absolute;
+            width: 520px;
+            height: 450px;
+            background: white;
+            border: 2px solid #000080;
+            box-shadow: 5px 5px 0 #555;
+            display: none;
+            flex-direction: column;
+        }
+
+        .window .title-bar {
+            background: #000080;
+            color: white;
+            padding: 5px;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .window .content textarea {
+            width: 100%;
+            height: 100%;
+            border: none;
+            resize: none;
+            font-family: 'Tahoma', sans-serif;
+            font-size: 14px;
+            z-index: 5;
+        }
+
+        .window .title-bar .close {
+            background: red;
+            color: white;
+            padding: 2px 5px;
+            cursor: pointer;
+        }
+
+        .window .content {
+            flex: 1;
+            padding: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .window .content video {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Taskbar */
+        .taskbar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 40px;
+            background-color: #c0c0c0;
+            display: flex;
+            align-items: center;
+            box-shadow: 0px -2px 5px #555;
+        }
+
+        .taskbar .start-button {
+            background-color: #000080;
+            color: white;
+            padding: 5px 10px;
+            margin-left: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            border: 1px solid #000;
+        }
+
+        .taskbar .start-button img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .taskbar .tray {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
+        }
+
+        .taskbar .tray img {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="desktop">
+        <!-- Icons --> <!--to add new vid change icon topdistance and name vere, then the stuff in the windows section -->
+        <div class="icon" style="top: 50px; left: 50px;" onclick="openWindow('video1')">
+            <img src="media/brpwnflagpixel.png" alt="Video Icon">
+            <span>Brown Flag</span>
+        </div>
+
+        <div class="icon" style="top: 150px; left: 50px;" onclick="openWindow('video2')">
+            <img src="media/Sequence 01.00_00_01_24.Still002.jpg" alt="Video Icon">
+            <span>Gomi Kite at kura</span>
+        </div>
+
+        
+
+        <div class="icon" style="top: 250px; left: 50px;" onclick="openWindow('video7')">
+            <img src="media/hiroimg.jpg" alt="Video Icon">
+            <span>Hiro San</span>
+        </div>
+
+        <div class="icon" style="top: 350px; left: 50px;" onclick="openWindow('video3')">
+            <img src="media/Sequence 01.00_03_01_00.Still002.jpg" alt="Video Icon">
+            <span>Gomi Kite 5</span>
+        </div>
+        <div class="icon" style="top: 450px; left: 50px;" onclick="openWindow('video5')">
+            <img src="media/marshatuse.png" alt="Video Icon">
+            <span>Quilt of gifts from Marsha and Atsue</span>
+        </div>
+
+        <div class="icon" style="top: 50px; left: 150px;" onclick="openWindow('video4')">
+            <img src="media/Sequence 01.00_00_00_25.Still001.jpg" alt="Video Icon">
+            <span>Gomi noren</span>
+        </div>
+
+       
+
+        <div class="icon" style="top: 250px; left: 150px;" onclick="openWindow('video6')">
+            <img src="media/bbb.jpg" alt="Video Icon">
+            <span>More gomi at the beach</span>
+        </div>
+
+        <div class="icon" style="top: 350px; left: 150px;" onclick="openWindow('video8')">
+            <img src="media/Sequence 01.00_00_01_24.Still002.jpg" alt="Video Icon">
+            <span>Kimono</span>
+        </div>
+
+        <div class="icon" style="top: 50px; left: 250px;" onclick="openWindow('video9')">
+            <img src="media/IKISANNORENPIXEL.png" alt="Video Icon">
+            <span>gomi noren</span>
+        </div>
+
+        <div class="icon" style="top: 150px; left: 250px;" onclick="openWindow('video10')">
+            <img src="media/Sequence 01.00_00_01_24.Still002.jpg" alt="Video Icon">
+            <span>Gomi Kite 3</span>
+        </div>
+
+        <div class="icon" style="top: 250px; left: 250px;" onclick="openWindow('video11')">
+            <img src="media/Sequence 01.00_00_01_24.Still002.jpg" alt="Video Icon">
+            <span>Gomi Kite 3</span>
+        </div>
+
+        <div class="icon" style="top: 350px; left: 250px;" onclick="openWindow('video12')">
+            <img src="media/LOTTOPIXEL.png" alt="Video Icon">
+            <span>Lotto Flag</span>
+        </div>
+
+
+
+        <div class="icon" style="top: 550px; right: 50px;" onclick="openWindow('textDoc')">
+            <img src="media/rubbishupate.png" alt="Text Icon">
+            <span>About</span>
+        </div>
+
+
+        
+
+        <div class="icon" style="top: 250px; left: 50px;" onclick="openWindow('video7')">
+            <img src="media/hiroimg.jpg" alt="Video Icon">
+            <span>Hiro San</span>
+        </div>
+
+        <div class="icon" style="top: 350px; left: 50px;" onclick="openWindow('video3')">
+            <img src="media/Sequence 01.00_03_01_00.Still002.jpg" alt="Video Icon">
+            <span>Gomi Kite 5</span>
+        </div>
+        <div class="icon" style="top: 450px; left: 50px;" onclick="openWindow('video5')">
+            <img src="media/marshatuse.png" alt="Video Icon">
+            <span>Quilt of gifts from Marsha and Atsue</span>
+        </div>
+
+        <div class="icon" style="top: 50px; left: 150px;" onclick="openWindow('video4')">
+            <img src="media/Sequence 01.00_00_00_25.Still001.jpg" alt="Video Icon">
+            <span>Gomi noren</span>
+        </div>
+
+       
+
+        <div class="icon" style="top: 250px; left: 150px;" onclick="openWindow('video6')">
+            <img src="media/bbb.jpg" alt="Video Icon">
+            <span>More gomi at the beach</span>
+        </div>
+
+        <div class="icon" style="top: 350px; left: 150px;" onclick="openWindow('video8')">
+            <img src="media/Sequence 01.00_00_01_24.Still002.jpg" alt="Video Icon">
+            <span>Kimono</span>
+        </div>
+
+        <div class="icon" style="top: 50px; left: 250px;" onclick="openWindow('video9')">
+            <img src="media/IKISANNORENPIXEL.png" alt="Video Icon">
+            <span>gomi noren</span>
+        </div>
+
+        <div class="icon" style="top: 150px; left: 250px;" onclick="openWindow('video10')">
+            <img src="media/Sequence 01.00_00_01_24.Still002.jpg" alt="Video Icon">
+            <span>Gomi Kite 3</span>
+        </div>
+
+        <div class="icon" style="top: 250px; left: 250px;" onclick="openWindow('video11')">
+            <img src="media/Sequence 01.00_00_01_24.Still002.jpg" alt="Video Icon">
+            <span>Gomi Kite 3</span>
+        </div>
+
+        <div class="icon" style="top: 350px; left: 250px;" onclick="openWindow('video12')">
+            <img src="media/LOTTOPIXEL.png" alt="Video Icon">
+            <span>Lotto Flag</span>
+        </div>
+
+
+
+        <div class="icon" style="top: 550px; right: 50px;" onclick="openWindow('textDoc')">
+            <img src="media/rubbishupate.png" alt="Text Icon">
+            <span>About</span>
+        </div>
+
+        <!-- Icons --> <!--to add new vid change icon topdistance and name vere, then the stuff in the windows section -->
+        <div class="icon" style="top: 50px; left: 50px;" onclick="openWindow('video1')">
+            <img src="media/brownflag.png" alt="Video Icon">
+            <span>Brown Flag</span>
+        </div>
+
+        <div class="icon" style="top: 150px; left: 50px;" onclick="openWindow('video2')">
+            <img src="media/Sequence 01.00_00_01_24.Still002.jpg" alt="Video Icon">
+            <span>Gomi Kite 3</span>
+        </div>
+
+        <div class="icon" style="top: 250px; left: 50px;" onclick="openWindow('video3')">
+            <img src="media/Sequence 01.00_03_01_00.Still002.jpg" alt="Video Icon">
+            <span>Gomi Kite 5</span>
+        </div>
+
+
+
+      
+      <!-- Windows -->
+      <div class="window" id="textDoc" style="top: 100px; right: 300px;">
+        <div class="title-bar">
+            <span>About</span>
+            <span class="close" onclick="closeWindow('textDoc')">X</span>
+        </div>
+        <div class="content">
+            <textarea readonly>
+        'Gomi' is a show by Harrison Rae that is exploring the materiality of garbage. In 'Gomi', Rae is showcasing a collection of flags, kites and quilts, sewing together items collected during his time as artist in residence at Studio Kura.
+       
+        Drawing upon the history of boro as a traditional handcraft, 'Gomi' explores the transformative potential of discarded materials and highlights the artistry and cultural resonance of repair and renewal.
+                
+        'Gomi' ties the domestic to the global through considering creative approaches to the challenges of sustainability, and uses flags, kites and quilts as objects to connect the past with the present.</textarea>
+        </div>
+    </div>
+
+<!--videos start below -->
+<!--brown flag video-->
+    <div class="window" id="video1" style="top: 100px; left: 100px;">
+        <div class="title-bar">
+            <span>Flag with crisp packet</span>
+            <span class="close" onclick="closeWindow('video1')">X</span>
+        </div>
+        <div class="content">
+            <video controls>
+                <source src="media/brownflagvid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!--little kid video-->
+    <div class="window" id="video2" style="top: 200px; left: 200px;">
+        <div class="title-bar">
+            <span>gomi kite 2</span>
+            <span class="close" onclick="closeWindow('video2')">X</span>
+        </div>
+        <div class="content">
+            <video controls>
+                <source src="media/lil kid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+<!--gomi beach video-->        
+    <div class="window" id="video3" style="top: 150px; left: 400px;">
+        <div class="title-bar">
+            <span>gomi beach</span>
+            <span class="close" onclick="closeWindow('video3')">X</span>
+        </div>
+        <div class="content">
+            <video controls>
+                <source src="media/Sequence 01_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        </div>
+
+      
+
+            <!--atsue and marsha-->
+        <div class="window" id="video5" style="top: 50px; left: 400px;">
+            <div class="title-bar">
+                <span>quilt of gifts from marsha and atsue</span>
+                <span class="close" onclick="closeWindow('video5')">X</span>
+            </div>
+            <div class="content">
+                <video controls>
+                    <source src="media/Sequence 01.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            </div>
+
+
+
+        <div class="window" id="video6" style="top: 125px; left: 900px;">
+            <div class="title-bar">
+                <span>beach</span>
+                <span class="close" onclick="closeWindow('video6')">X</span>
+            </div>
+            <div class="content">
+                <video controls>
+                    <source src="media/Sequence 01_3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            </div>
+
+                  <!--hiro san-->
+        <div class="window" id="video7" style="top: 125px; left: 800px;">
+            <div class="title-bar">
+                <span>hiro san</span>
+                <span class="close" onclick="closeWindow('video7')">X</span>
+            </div>
+            <div class="content">
+                <video controls>
+                    <source src="media/hiro.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            </div>
+
+
+         <div class="window" id="video8" style="top: 125px; left: 900px;">
+            <div class="title-bar">
+                <span>Kimono'sfromatuse</span>
+                <span class="close" onclick="closeWindow('video8')">X</span>
+            </div>  
+            <div class="content">
+                <video controls>
+                    <source src="media/NIREN.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+            </div>
+            </div>
+
+        <!--gomi noren-->    
+        <div class="window" id="video9" style="top: 50px; left: 600px;">
+            <div class="title-bar">
+                <span>ikisan noren</span>
+                <span class="close" onclick="closeWindow('video9')">X</span>
+            </div>
+            <div class="content">
+                <video controls>
+                    <source src="media/noren.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            </div>
+
+
+
+    </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <div class="start-button">
+            <img src="https://via.placeholder.com/20" alt="Start Icon">
+            Start
+        </div>
+        <div class="tray">
+            <img src="https://via.placeholder.com/20" alt="Volume Icon">
+            <img src="https://via.placeholder.com/20" alt="Clock Icon">
+        </div>
+    </div>
+
+    <script>
+        function openWindow(id) {
+            document.getElementById(id).style.display = 'flex';
+        }
+
+        function closeWindow(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+

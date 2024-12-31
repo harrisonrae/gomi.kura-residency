@@ -442,6 +442,10 @@
         </div>
     </div>
 
+        <!-- Audio player (hidden) -->
+        <audio id="background-music" src="media/edelveiss.mp3" preload="auto"></audio>
+
+        
     <script>
         function openWindow(id) {
             document.getElementById(id).style.display = 'flex';
@@ -450,6 +454,9 @@
         function closeWindow(id) {
             document.getElementById(id).style.display = 'none';
         }
+
+        const backgroundMusic = document.getElementById('background-music'); // Audio element
+        backgroundMusic.play(); // Start playing the background music
     </script>
 </body>
 </html>

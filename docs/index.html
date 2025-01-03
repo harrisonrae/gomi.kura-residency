@@ -418,6 +418,39 @@ function playMusic() {
 // Add a listener for the first click anywhere on the page
 document.addEventListener('click', playMusic);
 
+function startDrag(event, element) {
+            currentElement = element;
+            offsetX = event.clientX - element.offsetLeft;
+            offsetY = event.clientY - element.offsetTop;
+            document.addEventListener('mousemove', drag);
+            document.addEventListener('mouseup', stopDrag);
+        }
+
+        function drag(event) {
+            if (currentElement) {
+                currentElement.style.left = (event.clientX - offsetX) + 'px';
+                currentElement.style.top = (event.clientY - offsetY) + 'px';
+            }
+        }
+
+        function stopDrag() {
+            document.removeEventListener('mousemove', drag);
+            document.removeEventListener('mouseup', stopDrag);
+            currentElement = null;
+        }
+
+        document.querySelectorAll('.icon').forEach(icon => {
+            icon.addEventListener('mousedown', function(event) {
+                startDrag(event, this);
+            });
+        });
+
+         document.querySelectorAll('.window').forEach(window => {
+            window.addEventListener('mousedown', function(event) {
+                startDrag(event, this);
+            });
+        });
+
     </script>
 </body>
 </html>

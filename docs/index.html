@@ -149,6 +149,22 @@
             <span>Brown Flag</span>
         </div>
 
+        <div class="icon" style="top: 450px; left: 250px;" onclick="openWindow('pdf1')">
+    <img src="media/simd.jpg" alt="PDF Icon">
+    <span>Sketched Into Mobile Dust.pdf</span>
+</div>
+    
+        <!-- Icons --> <!--to add new vid change icon topdistance and name vere, then the stuff in the windows section -->
+        <div class="icon" style="top: 150px; left: 350px;" onclick="openWindow('video14')">
+            <img src="media/brownthing.png" alt="Video Icon">
+            <span>Brown Quilt</span>
+        </div>
+
+        <div class="icon" style="top: 50px; left: 350px;" onclick="openWindow('video13')">
+            <img src="media/marshatuse.png" alt="Video Icon">
+            <span>Atsue's Flag</span>
+        </div>
+
         <div class="icon" style="top: 150px; left: 50px;" onclick="openWindow('video2')">
             <img src="media/kurakite2.png" alt="Video Icon">
             <span>Gomi Kite at kura</span>
@@ -231,6 +247,18 @@
         'Gomi' ties the domestic to the global through considering creative approaches to the challenges of sustainability, and uses flags, kites and quilts as objects to connect the past with the present.</textarea>
         </div>
     </div>
+<div class="window" id="pdf1" style="top: 120px; left: 300px;">
+    <div class="title-bar">
+        <span>Catalogue</span>
+        <span class="close" onclick="closeWindow('pdf1')">X</span>
+    </div>
+    <div class="content">
+        <iframe 
+            src="media/simd.pdf"
+            style="width:100%; height:100%; border:none;"
+        ></iframe>
+    </div>
+</div>
 
 <!--videos start below -->
 <!--brown flag video-->
@@ -256,6 +284,34 @@
         <div class="content">
             <video controls>
                 <source src="media/lil kid.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <!--Atsue flag-->
+    <div class="window" id="video13" style="top: 200px; left: 200px;">
+        <div class="title-bar">
+            <span>Atsue's Flag</span>
+            <span class="close" onclick="closeWindow('video13')">X</span>
+        </div>
+        <div class="content">
+            <video controls>
+                <source src="media/atsueflag.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+       <!--brown thing-->
+    <div class="window" id="video14" style="top: 200px; left: 200px;">
+        <div class="title-bar">
+            <span>Brown Quilt</span>
+            <span class="close" onclick="closeWindow('video14')">X</span>
+        </div>
+        <div class="content">
+            <video controls>
+                <source src="media/brownquilt.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
         </div>
